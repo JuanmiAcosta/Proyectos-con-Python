@@ -16,7 +16,7 @@ def home_page():
 
 @app.route('/market')
 def market_page():
-    items = [ #lista de diccionarios
+    items = [ # lista de diccionarios
         {'id': 1, 'name': 'Meta Quest 3', 'barcode': '893212299897', 'price': 400},
         {'id': 2, 'name': 'Asus Tuf Gaming A15 2023', 'barcode': '123985473165', 'price': 1300},
         {'id': 3, 'name': 'Samsung Tab S7', 'barcode': '231985128446', 'price': 700},
