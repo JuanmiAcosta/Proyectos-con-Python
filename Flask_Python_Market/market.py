@@ -1,11 +1,28 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 # export FLASK_APP=market.py
+# export FLASK_ENV=development
 # export FLASK_DEBUG=1
 
 # flask run
 
+# pip install flask-sqlalchemy
+
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///market.db' #añadiendo configuración
+db = SQLAlchemy(app)
+
+
+class Item(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(length=30), nullable=False, unique=True)
+    price = db.Column(db.Integer(), nullable=False)
+    barcode = db.Column(db.String(length=12), nullable=False, unique=True)
+    description = db.Column(db.String(length=1024), nullable=False, unique=True)
+
+    def __repr__(self):
+        return f'Item{self.name}'
 
 
 @app.route('/')
@@ -16,12 +33,8 @@ def home_page():
 
 @app.route('/market')
 def market_page():
-    items = [ # lista de diccionarios
-        {'id': 1, 'name': 'Meta Quest 3', 'barcode': '893212299897', 'price': 400},
-        {'id': 2, 'name': 'Asus Tuf Gaming A15 2023', 'barcode': '123985473165', 'price': 1300},
-        {'id': 3, 'name': 'Samsung Tab S7', 'barcode': '231985128446', 'price': 700},
-    ]
-    return render_template('market.html', items = items)
+    items = Item.query.all() # query from market.db
+    return render_template('market.html', items=items)
 
 
 @app.route('/about/<username>')  # dynamic route
