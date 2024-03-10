@@ -7,6 +7,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 # flask run
 
+# source .venv/bin/activate
+
 # pip install flask-sqlalchemy
 
 app = Flask(__name__)
