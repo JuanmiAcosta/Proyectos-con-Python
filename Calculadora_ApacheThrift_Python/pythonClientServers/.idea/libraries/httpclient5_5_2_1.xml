@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="httpclient5-5.2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Descargas/jar_files/httpclient5-5.2.1.jar!/" />
+      <root url="jar://$USER_HOME$/Descargas/jar_files/commons-lang3-3.12.0.jar!/" />
+      <root url="jar://$USER_HOME$/Descargas/jar_files/httpcore5-5.2.jar!/" />
+      <root url="jar://$USER_HOME$/Descargas/jar_files/httpcore5-h2-5.2.jar!/" />
+      <root url="jar://$USER_HOME$/Descargas/jar_files/jakarta.annotation-api-2.1.1.jar!/" />
+      <root url="jar://$USER_HOME$/Descargas/jar_files/jakarta.servlet-api-5.0.0.jar!/" />
+      <root url="jar://$USER_HOME$/Descargas/jar_files/libthrift-0.19.0.jar!/" />
+      <root url="jar://$USER_HOME$/Descargas/jar_files/slf4j-api-1.7.36.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/gen-java" />
+    </SOURCES>
+  </library>
+</component>
